@@ -28,7 +28,7 @@ export default function SignUp() {
       signUpState.email &&
       signUpState.password
     ) {
-      if (signUpState.email.indexOf("@miu.edu") === -1) {
+      if (signUpState.email.indexOf("@miu.edu") === -1) { //only Maharishi International University student email is allowed
         Alert.alert("Use MIU email only");
       } else {
         axios

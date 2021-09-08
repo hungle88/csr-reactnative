@@ -72,9 +72,7 @@ export default function Login({ navigation }) {
               loginState
             )
             .then((response) => {
-              // console.log(response);
               if (response.status !== "invalid_user") {
-                //dispatch({ type: "STUDENT_ID", payload: response.data.studentId });
                 dispatch({
                   type: "LOG_IN",
                   payload: {

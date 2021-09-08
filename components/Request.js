@@ -37,6 +37,7 @@ export default function Request() {
   } = post;
   const navigation = useNavigation();
 
+  //delete request
   const deleteRequest = async () => {
     axios
       .delete(
@@ -52,6 +53,7 @@ export default function Request() {
       .catch((err) => console.log(err));
   };
 
+  //set request's status to 'done'
   const closeRequest = async () => {
     axios
       .put(
@@ -72,6 +74,7 @@ export default function Request() {
       .catch((err) => console.log(err));
   };
 
+  //edit request
   const editRequest = () => {
     navigation.navigate("EDIT_REQUEST", {
       currentCourse: currentCourse,

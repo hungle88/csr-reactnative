@@ -49,6 +49,7 @@ export default function Requests({ data }) {
     }
   };
 
+  //the content of the email students send to students
   async function sendEmail() {
     let result = await MailComposer.composeAsync({
       recipients: [email],

@@ -1,14 +1,18 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import {
   DefaultTheme,
   NavigationContainer,
   useNavigation,
 } from "@react-navigation/native";
-import {
-  Title, Caption, Headline
-} from "react-native-paper";
+import { Title, Caption, Headline } from "react-native-paper";
 
 export default function Course({ data }) {
   const { coursesName, offeringDate, posts } = data;
@@ -17,36 +21,32 @@ export default function Course({ data }) {
     navigation.navigate("COURSE_DETAIL", { posts });
   };
   const date = new Date(offeringDate);
-  const numberOfRequests = posts.filter(item=> item.status != 'complete')
+  const numberOfRequests = posts.filter((item) => item.status != "complete");
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.row}>
         <View>
-      <Title>Course: {coursesName}</Title>
-      <Text>
-        Offering Date: {date.getMonth() + 1 + "-" + date.getDate() + "-" + date.getFullYear()}
-      </Text>
-      <Text>
-        Number of Requests: {numberOfRequests.length}
-      </Text>
-      </View>
-      <View style={styles.rightSide}>
-        <TouchableOpacity
-          onPress={courseDetail}
-          style={styles.button}
-          underlayColor="#5398DC"
-        >
-          <Text style={styles.buttonText}>Request List</Text>
-        </TouchableOpacity>
-      </View>
-      {/* <View
-        style={{
-          height: 1,
-          backgroundColor: "grey",
-          marginBottom: 5,
-          marginTop: 5,
-        }}
-      ></View> */}
+          <Title>Course: {coursesName}</Title>
+          <Text>
+            Offering Date:{" "}
+            {date.getMonth() +
+              1 +
+              "-" +
+              date.getDate() +
+              "-" +
+              date.getFullYear()}
+          </Text>
+          <Text>Number of Requests: {numberOfRequests.length}</Text>
+        </View>
+        <View style={styles.rightSide}>
+          <TouchableOpacity
+            onPress={courseDetail}
+            style={styles.button}
+            underlayColor="#5398DC"
+          >
+            <Text style={styles.buttonText}>Request List</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#f6f6f6",
     marginLeft: 5,
-    marginRight:5
+    marginRight: 5,
   },
   button: {
     flexDirection: "row",
@@ -93,12 +93,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     borderBottomWidth: 1,
     borderColor: "grey",
-    padding: 5
+    padding: 5,
   },
   rightSide: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent:'center'
-    
-  }
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });

@@ -56,7 +56,6 @@ export default function AddRequest({ navigation }) {
                     type: "ADD_REQUEST",
                     payload: response.data[0].posts,
                   });
-                  // console.log(response);
                 })
                 .catch((err) => {
                   console.log(err);

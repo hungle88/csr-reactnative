@@ -16,7 +16,6 @@ import { CourseContext } from "../reducer/context";
 
 export default function EditRequest({ route: { params }, navigation }) {
   const { state, dispatch } = React.useContext(CourseContext);
-  //console.log(state.token)
 
   const { currentCourse, desiredCourse, message, status, _id } = params;
 
